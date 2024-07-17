@@ -1,13 +1,11 @@
 interface MainContentProps {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export function MainContent({ children }: MainContentProps) {
-	return (
-		<div
-			className='w-full min-h-screen flex flex-col 
-		 justify-between '>
-			{children}
-		</div>
-	);
+  return (
+    <div className="flex min-h-screen w-full flex-col justify-between">
+      {children}
+    </div>
+  );
 }

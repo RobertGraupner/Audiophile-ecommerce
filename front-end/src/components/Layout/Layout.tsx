@@ -4,11 +4,11 @@ import { Footer } from '../Footer/Footer';
 import { TopBar } from '../TopBar/TopBar';
 
 export function Layout() {
-	return (
-		<MainContent>
-			<TopBar />
-			<Outlet />
-			<Footer />
-		</MainContent>
-	);
+  return (
+    <MainContent>
+      <TopBar />
+      <Outlet />
+      <Footer />
+    </MainContent>
+  );
 }
