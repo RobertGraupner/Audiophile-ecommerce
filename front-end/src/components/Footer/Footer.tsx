@@ -6,7 +6,7 @@ import { Navigation } from '../Navigation/Navigation';
 export function Footer() {
   return (
     <footer className="bg-secondary text-white">
-      <div className="mx-auto grid h-fit min-h-96 max-w-[1440px] gap-9 px-8 pb-9 pt-[75px] md:grid-cols-2 md:pb-12 lg:px-10 xl:px-40">
+      <div className="mx-auto grid h-fit max-w-[1440px] gap-9 px-8 pb-9 pt-[75px] md:grid-cols-2 md:pb-12 lg:px-10 xl:px-40">
         <div className="col-span-2 mx-auto sm:mx-0 md:col-span-1">
           <Logo />
         </div>
