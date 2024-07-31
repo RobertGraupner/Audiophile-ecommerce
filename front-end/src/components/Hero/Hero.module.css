@@ -1,0 +1,11 @@
+.section {
+  background-image: linear-gradient(rgba(16, 16, 16), rgba(16, 16, 16, 0.4)),
+    url('../../assets/home/desktop/image-hero.jpg');
+}
+
+@media (max-width: 768px) {
+  .section {
+    background-image: linear-gradient(rgba(16, 16, 16), rgba(16, 16, 16, 0.4)),
+      url('../../assets/home/tablet/image-header.jpg');
+  }
+}
