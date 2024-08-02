@@ -7,10 +7,8 @@ import {
   redirect,
 } from 'react-router-dom';
 import { Layout } from './components/Layout/Layout.tsx';
-import { Home } from './views/Home/Home.tsx';
-import { Headphones } from './views/Headphones/Headphones.tsx';
-import { Speakers } from './views/Speakers/Speakers.tsx';
-import { Earphones } from './views/Earphones/Earphones.tsx';
+import { HomePage } from './views/HomePage/HomePage.tsx';
+import { CategoryPage } from './views/CategoryPage/CategoryPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -19,19 +17,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <HomePage />,
       },
       {
-        path: 'headphones',
-        element: <Headphones />,
-      },
-      {
-        path: 'speakers',
-        element: <Speakers />,
-      },
-      {
-        path: 'earphones',
-        element: <Earphones />,
+        path: '/:category',
+        element: <CategoryPage />,
       },
       {
         path: '*',

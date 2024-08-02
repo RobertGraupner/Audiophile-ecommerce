@@ -1,10 +1,10 @@
 import styles from './Hero.module.css';
 
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { Button } from '../Button/Button';
 
 export function Hero() {
-  const location = useLocation();
-  const category = location.pathname.slice(1);
+  const { category } = useParams<{ category: string }>();
 
   if (!category) {
     return (
@@ -23,9 +23,13 @@ export function Hero() {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <button className="mt-4 h-12 w-40 bg-primary text-xs font-medium uppercase tracking-[1px] hover:bg-primary-light">
+            <Button
+              bgColor="bg-primary"
+              hoverColor="hover:bg-primary-light"
+              textColor="text-white"
+            >
               See product
-            </button>
+            </Button>
           </div>
         </div>
       </section>

@@ -1,0 +1,15 @@
+.imageContainer {
+  background-image: url('../../assets/shared/desktop/image-best-gear.jpg');
+}
+
+@media (max-width: 1024px) {
+  .imageContainer {
+    background-image: url('../../assets/shared/tablet/image-best-gear.jpg');
+  }
+}
+
+@media (max-width: 768px) {
+  .imageContainer {
+    background-image: url('../../assets/shared/mobile/image-best-gear.jpg');
+  }
+}

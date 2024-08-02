@@ -1,0 +1,25 @@
+.containerSpeaker {
+  background-image: url('../../assets/home/desktop/image-speaker-zx7.jpg');
+}
+
+.containerEarphones {
+  background-image: url('../../assets/home/desktop/image-earphones-yx1.jpg');
+}
+
+@media (max-width: 1024px) {
+  .containerSpeaker {
+    background-image: url('../../assets/home/tablet/image-speaker-zx7.jpg');
+  }
+  .containerEarphones {
+    background-image: url('../../assets/home/tablet/image-earphones-yx1.jpg');
+  }
+}
+
+@media (max-width: 768px) {
+  .containerSpeaker {
+    background-image: url('../../assets/home/mobile/image-speaker-zx7.jpg');
+  }
+  .containerEarphones {
+    background-image: url('../../assets/home/mobile/image-earphones-yx1.jpg');
+  }
+}
