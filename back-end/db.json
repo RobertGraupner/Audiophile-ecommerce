@@ -1,5 +1,5 @@
 {
-	"products": [
+	"earphones": [
 		{
 			"id": 1,
 			"slug": "yx1-earphones",
@@ -87,7 +87,9 @@
 					}
 				}
 			]
-		},
+		}
+	],
+	"headphones": [
 		{
 			"id": 2,
 			"slug": "xx59-headphones",
@@ -343,7 +345,9 @@
 					}
 				}
 			]
-		},
+		}
+	],
+	"speakers": [
 		{
 			"id": 5,
 			"slug": "zx7-speaker",

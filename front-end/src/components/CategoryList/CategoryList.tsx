@@ -20,7 +20,7 @@ export function CategoryList() {
               {categoryName.toUpperCase()}
             </h2>
             <Link
-              to={`/category/${categoryName}`}
+              to={`/${categoryName}`}
               className="flex items-center justify-center gap-4 text-[13px] font-bold uppercase tracking-[1px] opacity-50 hover:text-primary hover:opacity-100"
             >
               Shop <img src={arrowRight} alt="Arrow Right" />
