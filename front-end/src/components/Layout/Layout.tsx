@@ -3,13 +3,17 @@ import { MainContent } from '../MainContent/MainContent';
 import { Footer } from '../Footer/Footer';
 import { TopBar } from '../TopBar/TopBar';
 import { Hero } from '../Hero/Hero';
+import { useLocation } from 'react-router-dom';
 
 export function Layout() {
+  const location = useLocation();
+  const isProductPage = /^\/[^/]+\/[^/]+$/.test(location.pathname);
+
   return (
     <MainContent>
       <div>
         <TopBar />
-        <Hero />
+        {!isProductPage && <Hero />}
       </div>
       <Outlet />
       <Footer />

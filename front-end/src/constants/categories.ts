@@ -1,3 +1,7 @@
+import headphonesImage from '../assets/shared/desktop/image-category-thumbnail-headphones.png';
+import speakersImage from '../assets/shared/desktop/image-category-thumbnail-speakers.png';
+import earphonesImage from '../assets/shared/desktop/image-category-thumbnail-earphones.png';
+
 export interface Category {
   path: string;
   categoryName: string;
@@ -32,16 +36,16 @@ export const LIST_CATEGORIES: ListCategory[] = [
   {
     id: 1,
     categoryName: 'headphones',
-    image: 'src/assets/shared/desktop/image-category-thumbnail-headphones.png',
+    image: headphonesImage,
   },
   {
     id: 2,
     categoryName: 'speakers',
-    image: 'src/assets/shared/desktop/image-category-thumbnail-speakers.png',
+    image: speakersImage,
   },
   {
     id: 3,
     categoryName: 'earphones',
-    image: 'src/assets/shared/desktop/image-category-thumbnail-earphones.png',
+    image: earphonesImage,
   },
 ];

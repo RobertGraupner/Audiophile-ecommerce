@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
 interface ButtonProps {
   children: React.ReactNode;
   bgColor: string;
   hoverColor: string;
   textColor: string;
   className?: string;
+  to: string;
 }
 
 export function Button({
@@ -12,12 +14,14 @@ export function Button({
   hoverColor,
   textColor,
   className = '',
+  to,
 }: ButtonProps) {
   return (
-    <button
-      className={`h-12 w-40 text-xs font-medium uppercase tracking-[1px] ${bgColor} ${hoverColor} ${textColor} ${className}`}
+    <Link
+      to={to}
+      className={`flex h-12 w-40 items-center justify-center text-xs font-medium uppercase tracking-[1px] ${bgColor} ${hoverColor} ${textColor} ${className}`}
     >
       {children}
-    </button>
+    </Link>
   );
 }

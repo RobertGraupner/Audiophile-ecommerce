@@ -27,6 +27,7 @@ export function Hero() {
               bgColor="bg-primary"
               hoverColor="hover:bg-primary-light"
               textColor="text-white"
+              to="/headphones/xx99-mark-two-headphones"
             >
               See product
             </Button>

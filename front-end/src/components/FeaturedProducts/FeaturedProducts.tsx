@@ -38,6 +38,7 @@ export function FeaturedProducts() {
             bgColor="bg-black"
             textColor="text-white"
             hoverColor="hover:bg-nardo-grey"
+            to="/speakers/zx9-speaker"
           >
             See product
           </Button>
@@ -55,6 +56,7 @@ export function FeaturedProducts() {
             textColor="text-black"
             hoverColor="hover:bg-black hover:text-white"
             className="border-1 border border-black"
+            to="/speakers/zx7-speaker"
           >
             See product
           </Button>
@@ -76,6 +78,7 @@ export function FeaturedProducts() {
               textColor="text-black"
               hoverColor="hover:bg-black hover:text-white"
               className="border-1 border border-black"
+              to="/earphones/yx1-earphones"
             >
               See product
             </Button>
