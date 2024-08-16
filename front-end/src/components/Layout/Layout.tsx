@@ -11,10 +11,10 @@ export function Layout() {
 
   return (
     <MainContent>
-      <div>
+      <>
         <TopBar />
         {!isProductPage && <Hero />}
-      </div>
+      </>
       <Outlet />
       <Footer />
     </MainContent>
