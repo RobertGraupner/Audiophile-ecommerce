@@ -10,6 +10,7 @@ import { Layout } from './components/Layout/Layout.tsx';
 import { HomePage } from './views/HomePage/HomePage.tsx';
 import { CategoryPage } from './views/CategoryPage/CategoryPage.tsx';
 import { ProductPage } from './views/ProductPage/ProductPage.tsx';
+import { CheckoutPage } from './views/CheckoutPage/CheckoutPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: '/checkout',
+        element: <CheckoutPage />,
       },
       {
         path: '/:category',

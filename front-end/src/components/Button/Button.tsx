@@ -6,6 +6,7 @@ interface ButtonProps {
   textColor: string;
   className?: string;
   to: string;
+  onClick?: () => void;
 }
 
 export function Button({
@@ -15,11 +16,13 @@ export function Button({
   textColor,
   className = '',
   to,
+  onClick,
 }: ButtonProps) {
   return (
     <Link
       to={to}
       className={`flex h-12 w-40 items-center justify-center text-xs font-medium uppercase tracking-[1px] ${bgColor} ${hoverColor} ${textColor} ${className}`}
+      onClick={onClick}
     >
       {children}
     </Link>

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { fixImagePath } from '../../utils/fixImagePath';
-import { Button } from '../Button/Button';
+import { AddToCartButton } from '../AddToCartButton/AddToCartButton';
 import { Product } from '../../types/product';
+import { formatPrice } from '../../utils/formatPrice';
 
 interface ProductInfoProps {
   product: Product;
@@ -9,7 +10,6 @@ interface ProductInfoProps {
 
 export function ProductInfo({ product }: ProductInfoProps) {
   const [quantity, setQuantity] = useState(1);
-
   return (
     <div className="mb-20 mt-14 flex flex-col gap-8 md:mb-28 md:flex-row md:items-center md:gap-16 lg:mb-40 lg:gap-32">
       <div className="w-full md:w-[40%] lg:w-[50%]">
@@ -43,7 +43,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
           {product.description}
         </p>
         <p className="mb-4 text-[18px] font-bold tracking-[1.3px]">
-          ${product.price}
+          ${formatPrice(product.price)}
         </p>
 
         <div className="flex items-center gap-4">
@@ -65,14 +65,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
             </button>
           </div>
 
-          <Button
-            bgColor="bg-primary"
-            hoverColor="hover:bg-primary-light"
-            textColor="text-white"
-            to="/cart"
-          >
-            Add to cart
-          </Button>
+          <AddToCartButton product={product} quantity={quantity} />
         </div>
       </div>
     </div>
