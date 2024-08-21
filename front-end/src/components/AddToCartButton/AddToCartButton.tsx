@@ -16,6 +16,7 @@ type AddToCartButtonProps = {
 
 export function AddToCartButton({ product, quantity }: AddToCartButtonProps) {
   const { addToCart } = useCart();
+
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleAddToCart = () => {

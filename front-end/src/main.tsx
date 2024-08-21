@@ -1,16 +1,15 @@
 import './styles/globals.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider,
-  redirect,
-} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './components/Layout/Layout.tsx';
 import { HomePage } from './views/HomePage/HomePage.tsx';
 import { CategoryPage } from './views/CategoryPage/CategoryPage.tsx';
 import { ProductPage } from './views/ProductPage/ProductPage.tsx';
 import { CheckoutPage } from './views/CheckoutPage/CheckoutPage.tsx';
+import { ErrorElement } from './components/ErrorElement/ErrorElement.tsx';
+import { categoryLoader } from './api/productListLoader.ts';
+import { productLoader } from './api/productLoader.ts';
 
 const router = createBrowserRouter([
   {
@@ -28,14 +27,14 @@ const router = createBrowserRouter([
       {
         path: '/:category',
         element: <CategoryPage />,
+        loader: categoryLoader,
+        errorElement: <ErrorElement />,
       },
       {
         path: '/:category/:slug',
         element: <ProductPage />,
-      },
-      {
-        path: '*',
-        loader: () => redirect('/'),
+        loader: productLoader,
+        errorElement: <ErrorElement />,
       },
     ],
   },

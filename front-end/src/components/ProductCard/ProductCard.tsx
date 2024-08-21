@@ -8,7 +8,6 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, reverse }: ProductCardProps) {
-  console.log(product);
   return (
     <div
       className={`flex flex-col items-center gap-28 md:flex-row md:gap-32 ${reverse ? 'md:flex-row-reverse' : ''}`}
