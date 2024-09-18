@@ -1,6 +1,4 @@
 import { Product } from '../../types/product';
-import { Button } from '../Button/Button';
-import { fixImagePath } from '../../utils/fixImagePath';
 import { Link } from 'react-router-dom';
 import { RelatedProducts } from '../RelatedProducts/RelatedProducts';
 import { ProductGallery } from '../ProductGallery/ProductGallery';
