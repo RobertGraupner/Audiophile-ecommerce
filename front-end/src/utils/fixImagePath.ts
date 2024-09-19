@@ -1,3 +1,7 @@
 export const fixImagePath = (path: string) => {
-  return path.replace('./assets', '/src/assets');
+  if (process.env.NODE_ENV === 'development') {
+    return path.replace('./assets', '/src/assets');
+  } else {
+    return path.replace('./assets', '/assets');
+  }
 };
