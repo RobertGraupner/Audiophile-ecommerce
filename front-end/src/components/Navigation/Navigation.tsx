@@ -3,15 +3,16 @@ import { CATEGORIES } from '../../constants/categories.ts';
 
 interface NavigationProps {
   className?: string;
+  onItemClick?: () => void;
 }
 
-export function Navigation({ className = '' }: NavigationProps) {
+export function Navigation({ className = '', onItemClick }: NavigationProps) {
   return (
     <ul
       className={`flex flex-col items-center justify-between text-sm font-bold uppercase leading-6 tracking-[2px] ${className}`}
     >
       {CATEGORIES.map((item) => (
-        <li key={item.path}>
+        <li key={item.path} onClick={onItemClick}>
           <NavLink
             to={item.path}
             className={({ isActive }) =>

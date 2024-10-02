@@ -56,7 +56,7 @@ export function TopBar() {
         </button>
       </div>
       <hr className="mx-auto max-w-[1120px] border-white border-opacity-20" />
-      <MobileMenu isOpen={isMenuOpen} />
+      <MobileMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
     </header>
   );
 }
