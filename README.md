@@ -12,20 +12,20 @@ This project showcases the implementation of modern web development practices, i
 ### Key Features
 
 #### Homepage
-![Homepage](docs/homepage.png)
+![Homepage](docs/main-page.png)
 *Modern and responsive homepage with category navigation*
 
 #### Product Details
-![Product Details](docs/product-details.png)
+![Product Details](docs/product-page.png)
 *Detailed product view with specifications and add to cart functionality*
 
 #### Shopping Cart
-![Shopping Cart](docs/shopping-cart.png)
-*Interactive cart management with real-time updates*
+![Shopping Cart](docs/cart.png)
+*Cart with products and total price*
 
 #### Checkout Process
 ![Checkout](docs/checkout.png)
-*Streamlined checkout process with form validation*
+*Checkout page with form validation*
 
 ## Live Version
 
