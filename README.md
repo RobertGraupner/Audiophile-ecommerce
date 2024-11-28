@@ -19,9 +19,9 @@ This project showcases the implementation of modern web development practices, i
 ![Category page](docs/product-page.png)
 *Category view with products*
 
-#### Shopping Cart
+#### Product details and shopping Cart
 ![Shopping Cart](docs/cart.png)
-*Cart with products and total price*
+*Product details and shopping cart*
 
 #### Checkout Process
 ![Checkout](docs/checkout.png)
