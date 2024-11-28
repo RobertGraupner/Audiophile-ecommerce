@@ -15,9 +15,9 @@ This project showcases the implementation of modern web development practices, i
 ![Homepage](docs/main-page.png)
 *Modern and responsive homepage with category navigation*
 
-#### Product Details
-![Product Details](docs/product-page.png)
-*Detailed product view with specifications and add to cart functionality*
+#### Category page
+![Category page](docs/product-page.png)
+*Category view with products*
 
 #### Shopping Cart
 ![Shopping Cart](docs/cart.png)
