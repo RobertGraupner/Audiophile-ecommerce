@@ -1,6 +1,31 @@
 # Audiophile E-commerce
 
-Audiophile E-commerce is an online store project built to enhance my skills in React and TypeScript. This project showcases the implementation of modern web development practices, including form handling and responsive design.
+Audiophile E-commerce is an online store project built to enhance my skills in React and TypeScript.
+App is built with React, TypeScript, TailwindCSS, React Router, React Hook Form, Vite, JSON Server.
+This project showcases the implementation of modern web development practices, including form handling and responsive design.
+
+## Demo & Screenshots
+
+### Application Overview
+![Demo](docs/demo.gif)
+
+### Key Features
+
+#### Homepage
+![Homepage](docs/homepage.png)
+*Modern and responsive homepage with category navigation*
+
+#### Product Details
+![Product Details](docs/product-details.png)
+*Detailed product view with specifications and add to cart functionality*
+
+#### Shopping Cart
+![Shopping Cart](docs/shopping-cart.png)
+*Interactive cart management with real-time updates*
+
+#### Checkout Process
+![Checkout](docs/checkout.png)
+*Streamlined checkout process with form validation*
 
 ## Live Version
 
