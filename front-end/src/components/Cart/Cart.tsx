@@ -5,19 +5,41 @@ import { fixImagePath } from '../../utils/fixImagePath';
 import { calculateTotal } from '../../utils/calculateTotalPrice';
 import { shortenName } from '../../utils/shortenName';
 import { formatPrice } from '../../utils/formatPrice';
+import { useRef, useEffect } from 'react';
 
 export function Cart() {
   const { cartItems, updateQuantity, clearCart, isCartOpen, setIsCartOpen } =
     useCart();
+
+  const cartRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
+        setIsCartOpen(false);
+      }
+    };
+
+    if (isCartOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isCartOpen, setIsCartOpen]);
 
   const total = calculateTotal(cartItems);
 
   if (!isCartOpen) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-50">
+    <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm transition-all duration-300">
       <div className="mx-auto mt-28 flex w-full max-w-[1120px] items-center justify-center md:justify-end">
-        <div className="flex w-full max-w-[377px] flex-col gap-6 rounded-lg bg-white p-8">
+        <div
+          ref={cartRef}
+          className="animate-slideIn flex w-full max-w-[377px] transform flex-col gap-6 rounded-lg bg-white p-8 shadow-lg transition-all duration-300"
+        >
           <div className="mb-8 flex justify-between">
             <h2 className="text-lg font-bold uppercase leading-normal tracking-[1.3px]">
               Cart ({cartItems.length})

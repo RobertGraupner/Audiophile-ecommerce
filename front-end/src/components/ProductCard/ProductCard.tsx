@@ -12,7 +12,7 @@ export function ProductCard({ product, reverse }: ProductCardProps) {
     <div
       className={`flex flex-col items-center gap-28 md:flex-row md:gap-32 ${reverse ? 'md:flex-row-reverse' : ''}`}
     >
-      <div className="w-full md:w-1/2">
+      <div className="w-full transition-transform duration-300 hover:scale-105 md:w-1/2">
         <picture>
           <source
             media="(min-width: 768px)"

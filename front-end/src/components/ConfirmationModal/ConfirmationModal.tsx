@@ -28,8 +28,8 @@ export function ConfirmationModal({ onClose }: ConfirmationModalProps) {
   };
 
   return createPortal(
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-6">
-      <div className="w-full max-w-[540px] rounded-lg bg-white p-8 md:p-12">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-6 backdrop-blur-sm transition-all duration-300">
+      <div className="animate-modalSlideIn w-full max-w-[540px] transform rounded-lg bg-white p-8 transition-all duration-300 md:p-12">
         <img src={ConfirmationIcon} alt="Order confirmed" className="mb-8" />
         <h2 className="mb-6 text-2xl font-bold uppercase md:text-3xl">
           Thank you

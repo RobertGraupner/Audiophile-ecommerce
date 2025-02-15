@@ -43,13 +43,17 @@ export function TopBar() {
         <Logo />
         <Navigation className="hidden flex-row gap-9 sm:flex-row md:flex" />
         <button
-          className="relative h-5"
+          className="relative h-5 transform transition-transform hover:scale-110"
           aria-label="Shopping cart"
           onClick={handleCartClick}
         >
-          <img src={cart} alt="cart" />
+          <img
+            src={cart}
+            alt="cart"
+            className="transition-opacity hover:opacity-80"
+          />
           {cartItems.length > 0 && (
-            <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-xs text-white">
+            <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-xs text-white transition-all duration-200">
               {cartItems.reduce((total, item) => total + item.quantity, 0)}
             </span>
           )}

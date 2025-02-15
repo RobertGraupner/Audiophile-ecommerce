@@ -47,9 +47,9 @@ export function ProductInfo({ product }: ProductInfoProps) {
         </p>
 
         <div className="flex items-center gap-4">
-          <div className="flex h-12 w-32 items-center justify-between bg-light-grey px-4">
+          <div className="flex h-12 w-32 items-center justify-between bg-light-grey px-4 transition-colors hover:bg-gray-200">
             <button
-              className="text-[13px] font-bold tracking-[1px] opacity-25 hover:text-primary hover:opacity-100"
+              className="transform text-[13px] font-bold tracking-[1px] opacity-25 transition-all hover:scale-125 hover:text-primary hover:opacity-100"
               onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
             >
               -
@@ -58,7 +58,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
               {quantity}
             </span>
             <button
-              className="text-[13px] font-bold tracking-[1px] opacity-25 hover:text-primary hover:opacity-100"
+              className="transform text-[13px] font-bold tracking-[1px] opacity-25 transition-all hover:scale-125 hover:text-primary hover:opacity-100"
               onClick={() => setQuantity((prev) => prev + 1)}
             >
               +

@@ -16,7 +16,7 @@ export function Navigation({ className = '', onItemClick }: NavigationProps) {
           <NavLink
             to={item.path}
             className={({ isActive }) =>
-              `text-sm font-bold uppercase tracking-[2px] hover:text-primary ${isActive ? 'text-primary' : 'text-white'}`
+              `text-sm font-bold uppercase tracking-[2px] transition-colors duration-200 ${isActive ? 'text-primary' : 'text-white hover:text-primary/80'}`
             }
           >
             {item.categoryName}

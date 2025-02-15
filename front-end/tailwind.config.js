@@ -14,6 +14,20 @@ export default {
       fontFamily: {
         sans: ['Manrope', 'sans-serif'],
       },
+      keyframes: {
+        slideIn: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        modalSlideIn: {
+          '0%': { transform: 'scale(0.9)', opacity: 0 },
+          '100%': { transform: 'scale(1)', opacity: 1 },
+        },
+      },
+      animation: {
+        slideIn: 'slideIn 0.3s ease-out',
+        modalSlideIn: 'modalSlideIn 0.3s ease-out',
+      },
     },
   },
   plugins: [],
