@@ -12,7 +12,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
   const [quantity, setQuantity] = useState(1);
   return (
     <div className="mb-20 mt-14 flex flex-col gap-8 md:mb-28 md:flex-row md:items-center md:gap-16 lg:mb-40 lg:gap-32">
-      <div className="w-full md:w-[40%] lg:w-[50%]">
+      <div className="w-full transition-transform duration-300 hover:scale-105 md:w-[40%] lg:w-[50%]">
         <picture>
           <source
             media="(min-width: 1024px)"

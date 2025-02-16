@@ -16,14 +16,14 @@ export function ProductCard({ product, reverse }: ProductCardProps) {
         <picture>
           <source
             media="(min-width: 768px)"
-            srcSet={fixImagePath(product.categoryImage.desktop)}
+            srcSet={fixImagePath(product.categoryimage.desktop)}
           />
           <source
             media="(min-width: 500px)"
-            srcSet={fixImagePath(product.categoryImage.tablet)}
+            srcSet={fixImagePath(product.categoryimage.tablet)}
           />
           <img
-            src={fixImagePath(product.categoryImage.mobile)}
+            src={fixImagePath(product.categoryimage.mobile)}
             alt={product.name}
             className="w-full rounded-lg"
           />

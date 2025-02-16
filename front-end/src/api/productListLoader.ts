@@ -1,6 +1,6 @@
 import { LoaderFunctionArgs, redirect } from 'react-router-dom';
-import { BACK_END_URL } from '../constants/api';
 import { CATEGORY } from '../constants/loaderCategoryAndSlug';
+import { supabase } from '../lib/supabase';
 
 export const categoryLoader = async ({ params }: LoaderFunctionArgs) => {
   const { category } = params;
@@ -9,13 +9,15 @@ export const categoryLoader = async ({ params }: LoaderFunctionArgs) => {
     return redirect('/');
   }
 
-  const response = await fetch(`${BACK_END_URL}/${category}`);
+  const { data, error } = await supabase
+    .from('products')
+    .select('*')
+    .eq('category', category);
 
-  if (!response.ok) {
-    throw new Response(`Failed to load data: ${response.statusText}`, {
-      status: response.status,
-    });
+  if (error) {
+    console.error('Supabase error:', error);
+    throw new Response('Failed to load data', { status: 500 });
   }
 
-  return response;
+  return data;
 };
