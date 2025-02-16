@@ -1,57 +1,63 @@
 # Audiophile E-commerce
 
-Audiophile E-commerce is an online store project built to enhance my skills in React and TypeScript.
-App is built with React, TypeScript, TailwindCSS, React Router, React Hook Form, Vite, JSON Server.
-This project showcases the implementation of modern web development practices, including form handling and responsive design.
+Audiophile E-commerce is a frontend-focused e-commerce project built with React and TypeScript, utilizing Supabase as a Backend-as-a-Service solution. The project demonstrates modern frontend development practices, including responsive design, state management, and form handling, while leveraging Supabase for data storage and retrieval.
+App is built with React, TypeScript, TailwindCSS, React Router, React Hook Form, Vite, Supabase.
 
 ## Demo & Screenshots
 
 ### Application Overview
+
 ![Demo](docs/demo.gif)
 
 ### Key Features
 
 #### Homepage
+
 ![Homepage](docs/main-page.png)
-*Modern and responsive homepage with category navigation*
+_Modern and responsive homepage with category navigation_
 
 #### Category page
+
 ![Category page](docs/product-page.png)
-*Category view with products*
+_Category view with products_
 
 #### Product details and shopping Cart
+
 ![Shopping Cart](docs/cart.png)
-*Product details and shopping cart*
+_Product details and shopping cart_
 
 #### Checkout Process
+
 ![Checkout](docs/checkout.png)
-*Checkout page with form validation*
+_Checkout page with form validation_
 
 ## Live Version
 
 The application is available online at: https://audiophile-ecommerce-front-end.vercel.app/
 
-Remember that the initial loading may take more than 30 seconds due to the limitations of the free backend hosting.
-
-**Note:**
-Due to the backend being hosted on Render's free plan, the initial loading of the live version may take more than 30 seconds. This is caused by the "spinning down" of inactive services. Subsequent interactions should be much faster. The local version runs without delays.
-
 ## Technologies Used
 
-- **React**: JavaScript library for building user interfaces
-- **TailwindCSS**: CSS framework for rapid custom designs
-- **react-hook-form**: Library for efficient form management in React
-- **Vite**: Build tool for fast frontend application development
+- **React 18**: JavaScript library for building user interfaces
 - **TypeScript**: Typed superset of JavaScript
-- **React Router**: Routing library for React applications
-- **JSON Server**: Lightweight backend for API prototyping and mocking
+- **TailwindCSS**: CSS framework for rapid custom designs
+- **React Router 6**: Routing library for React applications
+- **React Hook Form**: Library for efficient form management
+- **Supabase**: Backend as a Service for database and API
+- **Vite**: Build tool for fast frontend development
+- **React Portal**: For modal implementations
+- **React Icons**: Icon library
 
-## Project Structure
+## Key Features
 
-The project is divided into two main folders:
-
-- `back-end` - Contains the backend server setup.
-- `front-end` - Contains the React application.
+- Responsive design for all devices
+- Interactive shopping cart with local storage persistence
+- Dynamic product loading with Supabase integration
+- Form validation using React Hook Form
+- Smooth animations and transitions
+- Image optimization for different screen sizes
+- Error handling and loading states
+- Modal windows using React Portal
+- Category-based product navigation
 
 ## Installation
 
