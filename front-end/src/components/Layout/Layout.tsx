@@ -7,6 +7,7 @@ import { Hero } from '../Hero/Hero';
 import { Cart } from '../Cart/Cart';
 import { CartProvider } from '../../contexts/CartContext';
 import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
+import { AuthProvider } from '../../contexts/AuthContext';
 
 export function Layout() {
   const location = useLocation();
@@ -20,23 +21,25 @@ export function Layout() {
   }, [location.pathname]);
 
   return (
-    <CartProvider>
-      <MainContent>
-        <>
-          <TopBar />
-          {!isProductPage && <Hero />}
-        </>
-        <main
-          className={`bg-white transition-opacity duration-300 ${
-            navigation.state === 'loading' ? 'opacity-50' : 'opacity-100'
-          }`}
-        >
-          <Outlet />
-        </main>
-        <Footer />
-      </MainContent>
-      <Cart />
-      {navigation.state === 'loading' && <LoadingSpinner />}
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <MainContent>
+          <>
+            <TopBar />
+            {!isProductPage && <Hero />}
+          </>
+          <main
+            className={`bg-white transition-opacity duration-300 ${
+              navigation.state === 'loading' ? 'opacity-50' : 'opacity-100'
+            }`}
+          >
+            <Outlet />
+          </main>
+          <Footer />
+        </MainContent>
+        <Cart />
+        {navigation.state === 'loading' && <LoadingSpinner />}
+      </CartProvider>
+    </AuthProvider>
   );
 }

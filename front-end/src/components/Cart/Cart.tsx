@@ -38,7 +38,7 @@ export function Cart() {
       <div className="mx-auto mt-28 flex w-full max-w-[1120px] items-center justify-center md:justify-end">
         <div
           ref={cartRef}
-          className="animate-slideIn flex w-full max-w-[377px] transform flex-col gap-6 rounded-lg bg-white p-8 shadow-lg transition-all duration-300"
+          className="flex w-full max-w-[377px] transform animate-slideIn flex-col gap-6 rounded-lg bg-white p-8 shadow-lg transition-all duration-300"
         >
           <div className="mb-8 flex justify-between">
             <h2 className="text-lg font-bold uppercase leading-normal tracking-[1.3px]">

@@ -9,4 +9,8 @@ export interface CustomFormData {
   paymentMethod: string;
   eMoneyNumber?: string;
   eMoneyPin?: string;
+
+  name_user?: string;
+  email_user?: string;
+  password_user?: string;
 }
