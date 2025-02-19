@@ -5,7 +5,11 @@ import { fixImagePath } from '../../utils/fixImagePath';
 import { shortenName } from '../../utils/shortenName';
 import { SHIPPING_COST, VAT_RATE } from '../../constants/prices';
 
-export function CheckoutSummary() {
+interface CheckoutSummaryProps {
+  isSubmitting: boolean;
+}
+
+export function CheckoutSummary({ isSubmitting }: CheckoutSummaryProps) {
   const { cartItems } = useCart();
 
   const subtotal = calculateTotal(cartItems);
@@ -61,9 +65,10 @@ export function CheckoutSummary() {
 
       <button
         type="submit"
-        className="mt-8 h-12 w-full bg-primary text-[13px] tracking-[1px] text-white transition duration-300 hover:bg-primary-light"
+        disabled={isSubmitting}
+        className="mt-8 h-12 w-full bg-primary text-[13px] tracking-[1px] text-white transition duration-300 hover:bg-primary-light disabled:cursor-not-allowed disabled:opacity-50"
       >
-        CONTINUE & PAY
+        {isSubmitting ? 'Processing...' : 'CONTINUE & PAY'}
       </button>
     </section>
   );

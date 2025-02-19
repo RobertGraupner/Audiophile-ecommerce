@@ -10,6 +10,8 @@ type AddToCartButtonProps = {
     image: {
       mobile: string;
     };
+    slug: string;
+    category: string;
   };
   quantity: number;
 };
@@ -26,6 +28,8 @@ export function AddToCartButton({ product, quantity }: AddToCartButtonProps) {
       price: product.price,
       image: product.image.mobile,
       quantity: quantity,
+      slug: product.slug,
+      category: product.category,
     });
     setShowConfirmation(true);
   };

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { fixImagePath } from '../../utils/fixImagePath';
 import { AddToCartButton } from '../AddToCartButton/AddToCartButton';
 import { Product } from '../../types/product';
@@ -10,6 +10,12 @@ interface ProductInfoProps {
 
 export function ProductInfo({ product }: ProductInfoProps) {
   const [quantity, setQuantity] = useState(1);
+
+  // Reset quantity when product changes
+  useEffect(() => {
+    setQuantity(1);
+  }, [product.id]);
+
   return (
     <div className="mb-20 mt-14 flex flex-col gap-8 md:mb-28 md:flex-row md:items-center md:gap-16 lg:mb-40 lg:gap-32">
       <div className="w-full transition-transform duration-300 hover:scale-105 md:w-[40%] lg:w-[50%]">

@@ -10,6 +10,9 @@ import { CheckoutPage } from './views/CheckoutPage/CheckoutPage.tsx';
 import { ErrorElement } from './components/ErrorElement/ErrorElement.tsx';
 import { categoryLoader } from './api/productListLoader.ts';
 import { productLoader } from './api/productLoader.ts';
+import { OrdersPage } from './views/OrdersPage/OrdersPage.tsx';
+import { OrderDetailsPage } from './views/OrderDetailsPage/OrderDetailsPage.tsx';
+import { ordersLoader, orderDetailsLoader } from './api/ordersLoader';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +37,18 @@ const router = createBrowserRouter([
         path: '/:category/:slug',
         element: <ProductPage />,
         loader: productLoader,
+        errorElement: <ErrorElement />,
+      },
+      {
+        path: '/orders',
+        element: <OrdersPage />,
+        loader: ordersLoader,
+        errorElement: <ErrorElement />,
+      },
+      {
+        path: '/orders/:orderId',
+        element: <OrderDetailsPage />,
+        loader: orderDetailsLoader,
         errorElement: <ErrorElement />,
       },
     ],

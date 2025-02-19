@@ -9,9 +9,15 @@ interface AuthModalProps {
   isOpen: boolean;
   onClose: () => void;
   defaultIsLogin: boolean;
+  message?: string;
 }
 
-export function AuthModal({ isOpen, onClose, defaultIsLogin }: AuthModalProps) {
+export function AuthModal({
+  isOpen,
+  onClose,
+  defaultIsLogin,
+  message,
+}: AuthModalProps) {
   const [isLogin, setIsLogin] = useState(defaultIsLogin);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -132,6 +138,10 @@ export function AuthModal({ isOpen, onClose, defaultIsLogin }: AuthModalProps) {
             <IoClose />
           </button>
         </div>
+
+        {message && (
+          <p className="mb-4 text-center text-sm text-gray-600">{message}</p>
+        )}
 
         {error && <p className="mb-4 text-[14px] text-red-500">{error}</p>}
 

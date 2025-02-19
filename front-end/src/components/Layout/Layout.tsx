@@ -14,7 +14,8 @@ export function Layout() {
   const navigation = useNavigation();
   const isProductPage =
     /^\/[^/]+\/[^/]+$/.test(location.pathname) ||
-    location.pathname === '/checkout';
+    location.pathname === '/checkout' ||
+    location.pathname === '/orders';
 
   useEffect(() => {
     window.scrollTo(0, 0);

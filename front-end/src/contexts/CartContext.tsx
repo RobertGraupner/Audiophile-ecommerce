@@ -1,12 +1,5 @@
 import { createContext, useState, useEffect, ReactNode } from 'react';
-
-export interface CartItem {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-  image: string;
-}
+import { CartItem } from '../types/cartItem';
 
 export interface CartContextType {
   cartItems: CartItem[];
