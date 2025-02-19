@@ -1,9 +1,7 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
-import { useForm } from 'react-hook-form';
-import { supabase } from '../../lib/supabase';
-import { CustomFormData } from '../../types/customFormData';
+import { useRef, useEffect } from 'react';
 import { IoClose } from 'react-icons/io5';
 import { AuthForm } from '../AuthForm/AuthForm';
+import { useAuthModal } from '../../hooks/useAuthModal';
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -18,24 +16,18 @@ export function AuthModal({
   defaultIsLogin,
   message,
 }: AuthModalProps) {
-  const [isLogin, setIsLogin] = useState(defaultIsLogin);
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
-
   const modalRef = useRef<HTMLDivElement>(null);
   const {
+    isLogin,
+    error,
+    loading,
     register,
     handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<CustomFormData>();
-
-  const handleClose = useCallback(() => {
-    reset();
-    setError(null);
-    setIsLogin(true);
-    onClose();
-  }, [onClose, reset]);
+    errors,
+    onSubmit,
+    handleClose,
+    handleToggleMode,
+  } = useAuthModal(defaultIsLogin, onClose);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -50,69 +42,6 @@ export function AuthModal({
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [handleClose]);
-
-  useEffect(() => {
-    setIsLogin(defaultIsLogin);
-  }, [defaultIsLogin]);
-
-  const handleLogin = async (data: CustomFormData) => {
-    const { email_user, password_user } = data;
-    if (!email_user || !password_user) {
-      throw new Error('Please fill in all required login fields.');
-    }
-    const { error } = await supabase.auth.signInWithPassword({
-      email: email_user,
-      password: password_user,
-    });
-    if (error) {
-      throw error;
-    }
-  };
-
-  const handleRegister = async (data: CustomFormData) => {
-    const { email_user, password_user, name_user } = data;
-    if (!email_user || !password_user || !name_user) {
-      throw new Error('Please fill in all required registration fields.');
-    }
-    const { error } = await supabase.auth.signUp({
-      email: email_user,
-      password: password_user,
-      options: {
-        data: {
-          display_name: name_user,
-        },
-      },
-    });
-    if (error) {
-      throw error;
-    }
-  };
-
-  const onSubmit = async (data: CustomFormData) => {
-    setLoading(true);
-    try {
-      if (isLogin) {
-        await handleLogin(data);
-      } else {
-        await handleRegister(data);
-      }
-      handleClose();
-    } catch (err: unknown) {
-      if (err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError('An error occurred while logging in or registering');
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleToggleMode = useCallback(() => {
-    setIsLogin((prev) => !prev);
-    setError(null);
-    reset();
-  }, [reset]);
 
   if (!isOpen) return null;
 
@@ -142,8 +71,6 @@ export function AuthModal({
         {message && (
           <p className="mb-4 text-center text-sm text-gray-600">{message}</p>
         )}
-
-        {error && <p className="mb-4 text-[14px] text-red-500">{error}</p>}
 
         <AuthForm
           isLogin={isLogin}

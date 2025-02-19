@@ -23,6 +23,7 @@ export function BillingDetailsForm({
           register={register}
           error={errors.name}
           required
+          autoComplete="off"
         />
         <InputForm
           id="email"
@@ -31,6 +32,11 @@ export function BillingDetailsForm({
           register={register}
           error={errors.email}
           required
+          pattern={{
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            message: 'Invalid email address',
+          }}
+          autoComplete="off"
         />
         <InputForm
           id="phoneNumber"
@@ -38,6 +44,11 @@ export function BillingDetailsForm({
           register={register}
           error={errors.phoneNumber}
           required
+          pattern={{
+            value: /^[+]?\d+$/,
+            message: 'Phone number can only contain numbers and + sign',
+          }}
+          autoComplete="off"
         />
       </div>
     </section>

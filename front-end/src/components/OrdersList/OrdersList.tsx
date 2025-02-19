@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Order } from '../../types/order';
 import { OrdersCard } from '../OrdersCard/OrdersCard';
 
@@ -21,14 +20,9 @@ export function OrdersList({ orders }: OrdersListProps) {
   return (
     <div className="space-y-8">
       {orders.map((order) => (
-        <Link
-          to={`/orders/${order.id}`}
-          state={{ orderDetails: order }}
-          key={order.id}
-          className="block w-full"
-        >
+        <div key={order.id}>
           <OrdersCard order={order} />
-        </Link>
+        </div>
       ))}
     </div>
   );

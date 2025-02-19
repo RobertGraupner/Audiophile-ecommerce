@@ -20,7 +20,7 @@ export function ConfirmationModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-6 backdrop-blur-sm">
-      <div className="w-full max-w-[540px] rounded-lg bg-white p-8">
+      <div className="w-full max-w-[540px] animate-slideIn rounded-lg bg-white p-8">
         <img src={ConfirmationIcon} alt="Order confirmed" className="mb-8" />
         <h2 className="mb-6 text-2xl font-bold uppercase">
           Thank you for your order

@@ -1,4 +1,4 @@
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import { useRef, useEffect } from 'react';
 import { FaUser, FaShoppingBag, FaSignOutAlt } from 'react-icons/fa';

@@ -9,6 +9,11 @@ interface InputFormProps {
   register: UseFormRegister<CustomFormData>;
   error?: FieldError;
   required?: boolean;
+  pattern?: {
+    value: RegExp;
+    message: string;
+  };
+  autoComplete?: string;
 }
 
 export function InputForm({
@@ -18,6 +23,8 @@ export function InputForm({
   register,
   error,
   required = false,
+  pattern,
+  autoComplete = 'off',
 }: InputFormProps) {
   return (
     <div>
@@ -30,7 +37,11 @@ export function InputForm({
       <input
         id={id}
         type={type}
-        {...register(id, { required: required && `${label} is required` })}
+        autoComplete={autoComplete}
+        {...register(id, {
+          required: required && `${label} is required`,
+          pattern: pattern,
+        })}
         className={`w-full rounded-lg border p-3 text-sm tracking-[-0.25px] opacity-40 ${
           error ? 'border-primary' : 'border-[#CFCFCF]'
         } focus:border-primary focus:outline-none focus:ring-0`}

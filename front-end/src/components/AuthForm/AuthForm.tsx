@@ -29,7 +29,7 @@ export function AuthForm({
 }: AuthFormProps) {
   return (
     <>
-      {error && <p className="mb-4 text-[14px] text-red-500">{error}</p>}
+      {error && <div className="mb-4 text-[14px] text-primary">{error}</div>}
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 text-black"
@@ -50,6 +50,10 @@ export function AuthForm({
           register={register}
           error={errors.email_user}
           required
+          pattern={{
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            message: 'Invalid email address',
+          }}
         />
         <InputForm
           id="password_user"
@@ -66,7 +70,7 @@ export function AuthForm({
         >
           {isLoading ? 'Logging in...' : isLogin ? 'Login' : 'Register'}
         </button>
-        <p className="text-center text-[14px]">
+        <div className="text-center text-[14px]">
           {isLogin ? "Don't have an account?" : 'Already have an account?'}
           <button
             type="button"
@@ -75,7 +79,7 @@ export function AuthForm({
           >
             {isLogin ? 'Register' : 'Login'}
           </button>
-        </p>
+        </div>
       </form>
     </>
   );

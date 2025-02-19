@@ -6,9 +6,7 @@ import { useState, useEffect } from 'react';
 import cart from '../../assets/shared/desktop/icon-cart.svg';
 import { useCart } from '../../hooks/useCart';
 import { FaUser } from 'react-icons/fa';
-
 import { AuthModal } from '../AuthModal/AuthModal';
-
 import { UserMenu } from '../UserMenu/UserMenu';
 
 export function TopBar() {
